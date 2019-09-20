@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Compositions";
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        <h2 id="tabletitle">Compositions:<img id="edit" onclick="makeEditable()" /></h2>
+    </div>
+    <div class="input-group">
+        <form method="post" action="delete_comp.php">
+            <input id="filename" name="filename" type="text" class="form-control" placeholder="File Name">
+            <button id="openButton" name="openButton" type="submit" onclick="openFile()" class="btn btn-primary">Open</button>
+            <button id="deleteButton" name="deleeteButton" type="submit" onclick="deleteFile()" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+    <div>
+        <table class="table table-striped table-dark">
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Tags</th>
+                    <th scope="col">Date Created</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+}
